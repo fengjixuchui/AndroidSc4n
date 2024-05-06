@@ -4,7 +4,7 @@ __________
 
 ## Overview
 
-This repositiory contains scripts designed to identify potential vulnerabilities in Android apps. 
+This repo contains scripts designed to identify potential vulnerabilities in Android apps. 
 
 This tool currently scans APK files to detect exported activities that have 'android.intent.action.CALL' in their intent filters, which can expose dangerous permissions, posing security risks to users.
 
