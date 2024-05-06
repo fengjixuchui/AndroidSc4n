@@ -1,15 +1,12 @@
 
-__________                     .__              .__                
-\______   \ ___________  _____ |__| ______ _____|__| ____   ____   
- |     ___// __ \_  __ \/     \|  |/  ___//  ___/  |/  _ \ /    \  
- |    |   \  ___/|  | \/  Y Y  \  |\___ \ \___ \|  (  <_> )   |  \ 
- |____|    \___  >__|  |__|_|  /__/____  >____  >__|\____/|___|  /
-               \/            \/        \/     \/               \/  
-Ver 1.0.0.Beta
+__________          
+
 
 ## Overview
 
-This repositiory is a Python script designed to identify potential vulnerabilities in Android apps. This tool currently scans APK files to detect exported activities that have 'android.intent.action.CALL' in their intent filters, which can expose dangerous permissions, posing security risks to users.
+This repositiory contains scripts designed to identify potential vulnerabilities in Android apps. 
+
+This tool currently scans APK files to detect exported activities that have 'android.intent.action.CALL' in their intent filters, which can expose dangerous permissions, posing security risks to users.
 
 **Note: This project is a work in progress (WIP) and is currently under development.**
 
@@ -56,4 +53,5 @@ Contributions to Dialer.py are welcome! If you'd like to contribute, please fork
 ## License
 
 This project is licensed under the MIT License. 
+
 ---
