@@ -11,8 +11,8 @@ __________                     .__              .__
  |    |   \  ___/|  | \/  Y Y  \  |\___ \ \___ \|  (  <_> )   |  \ 
  |____|    \___  >__|  |__|_|  /__/____  >____  >__|\____/|___|  /
                \/            \/        \/     \/               \/  
-Ver 1.0.0.Beta
-Created by Github.com/Actuator
+ Version 1.0.0.BETA
+ Created by Github.com/Actuator
 """
 
 def print_help():
@@ -82,8 +82,29 @@ def analyze_apk(apk_file):
         print(f"Dangerous activities found in {apk_file}:")
         for activity in dangerous_activities:
             print(f" - {activity}")
+        package_name = get_package_name(manifest_file)
+        for activity_name in dangerous_activities:
+            adb_command = generate_adb_command(package_name, activity_name)
+            print("\nExample ADB Command to Test the Activity:")
+            print(adb_command)
     else:
         print(f"No dangerous activities found in {apk_file}.")
+
+def get_package_name(manifest_file):
+    try:
+        with open(manifest_file, 'r', encoding='utf-8') as f:
+            manifest_content = f.read()
+
+        match = re.search(r'<manifest(?:[^>]|\n)*?\bpackage\s*=\s*["\']([^"\']+)["\']', manifest_content)
+        if match:
+            return match.group(1)
+    except Exception as e:
+        print(f"Error: An unexpected error occurred: {e}")
+    return None
+
+def generate_adb_command(package_name, activity_name):
+    adb_command = f"adb shell am start -a android.intent.action.CALL -d tel:+18778295500 -n {package_name}/{activity_name}"
+    return adb_command
 
 def main(apk_path):
     if os.path.isfile(apk_path) and apk_path.endswith('.apk'):
