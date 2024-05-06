@@ -10,6 +10,9 @@ This tool currently scans APK files to detect exported activities that have 'and
 
 **Note: This project is a work in progress (WIP) and is currently under development.**
 
+![image](https://github.com/actuator/AndroidScan/assets/78701239/bfb3229a-1e90-42e4-82e2-ce8e9bbea7c1)
+
+
 ## Features
 
 - Scans APK files for exported activities with 'android.intent.action.CALL' intent filters.
